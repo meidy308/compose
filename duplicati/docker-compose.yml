@@ -9,9 +9,9 @@ services:
       - TZ=Asia/Jakarta  # Set the timezone to Asia/Jakarta
       - CLI_ARGS= #optional
     volumes:
-      - /path/to/appdata/config:/config
-      - /path/to/backups:/backups
-      - /path/to/source:/source
+      - ./config:/config
+      - ./backups:/backups
+      - /:/source
     ports:
       - 50002:8200
     restart: unless-stopped
