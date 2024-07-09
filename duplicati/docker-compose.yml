@@ -7,7 +7,7 @@ services:
       - PUID=0
       - PGID=0
       - TZ=Asia/Jakarta  # Set the timezone to Asia/Jakarta
-      - CLI_ARGS= #optional
+      - CLI_ARGS=duplicati-server --webservice-interface=any --webservice-allowed-hostnames=* # agar bisa diakses via remote
     volumes:
       - ./config:/config
       - ./backups:/backups
