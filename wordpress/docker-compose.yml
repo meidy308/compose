@@ -4,10 +4,10 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: ganti-wordpress-db-password
-      MYSQL_DATABASE: wordpress_db
-      MYSQL_USER: wp_user
-      MYSQL_PASSWORD: ganti-wordpress-db-password
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
       - mysql:/var/lib/mysql
 
@@ -21,9 +21,9 @@ services:
       # - "44301:443"
     environment:
       WORDPRESS_DB_HOST: database:3306
-      WORDPRESS_DB_USER: wp_user
-      WORDPRESS_DB_PASSWORD: ganti-wordpress-db-password
-      WORDPRESS_DB_NAME: wordpress_db
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${DB_NAME}
     volumes:
     - ./wp-iman:/var/www/html
     - ./set/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
