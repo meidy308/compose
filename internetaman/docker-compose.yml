@@ -27,5 +27,6 @@ services:
     volumes:
     - ./wp-iman:/var/www/html
     - ./set/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    - ./logs:/var/log/apache2/
 volumes:
   mysql: {}
